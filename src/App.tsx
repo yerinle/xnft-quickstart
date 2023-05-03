@@ -9,6 +9,7 @@ import { useFonts, Inter_900Black } from "@expo-google-fonts/dev";
 import { ExamplesScreens } from "./screens/ExamplesScreen";
 import { HomeScreen } from "./screens/HomeScreen";
 import { TokenListNavigator } from "./screens/TokenNavigator";
+import {WalletScreen} from "./screens/WalletScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -51,6 +52,16 @@ function TabNavigator() {
           ),
         }}
       />
+        <Tab.Screen
+            name="Wallet"
+            component={WalletScreen}
+            options={{
+                tabBarLabel: "Wallet",
+                tabBarIcon: ({ color, size }) => (
+                    <MaterialCommunityIcons name="wallet" color={color} size={size} />
+                ),
+            }}
+        />
     </Tab.Navigator>
   );
 }
